@@ -1,0 +1,217 @@
+/* src/index.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap');
+
+/* --- FUENTES Y VARIABLES GLOBALES --- */
+:root {
+  --primary-blue: #2A5D8A;
+  --dark-blue: #1E4260;
+  --text-color: #333;
+  
+  /* --- CAMBIA ESTAS LÍNEAS --- */
+  --heading-font: 'Didact Gothic', sans-serif;
+  --body-font: 'Didact Gothic', sans-serif;
+  
+  --page-background: #fff;
+  --button-color: #9C27B0;
+}
+
+/* --- RESET BÁSICO --- */
+body {
+  margin: 0;
+  font-family: var(--body-font); /* Esto aplicará la fuente a todo */
+  color: var(--text-color);
+  background-color: var(--page-background);
+  line-height: 1.6;
+}
+
+/* --- RESET BÁSICO --- */
+body {
+  margin: 0;
+  font-family: var(--body-font);
+  color: var(--text-color);
+  background-color: var(--page-background);
+  line-height: 1.6;
+}
+/* --- BANNER SUPERIOR (HEADER) --- */
+.hero-banner {
+  height: 450px;
+  /* --- AHORA USAREMOS TU IMAGEN DE BANNER --- */
+  background: url('/banner_arriba.jpeg') no-repeat center center/cover; /* <--- AQUÍ ESTÁ EL CAMBIO CLAVE */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+.logo-top-right {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: black;
+  padding: 15px;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  font-family: var(--heading-font);
+  /* Asegúrate de que no tenga 'display: none;' */
+}
+.hero-text {
+  text-align: center;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+.event-title {
+  font-family: var(--heading-font);
+  font-size: 5rem;
+  font-weight: 400;
+  line-height: 1;
+}
+.thirtieth-annual sup {
+  font-size: 0.5em;
+  vertical-align: super;
+}
+.event-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  font-size: 2.5rem;
+  font-weight: 900;
+  font-family: var(--body-font);
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  margin-top: 1rem;
+  padding: 0.5rem 0;
+}
+.event-details .year {
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  padding: 0 20px;
+}
+/* --- ESTRUCTURA PRINCIPAL DE LA PÁGINA (2 COLUMNAS) --- */
+.page-body {
+  display: flex;
+  width: 90%;
+  max-width: 1400px;
+  margin: 2rem auto;
+  gap: 2rem;
+}
+
+/* --- BARRA DE NAVEGACIÓN LATERAL --- */
+.side-navigation {
+  flex: 0 0 280px; /* No crece, no se encoge, base de 280px */
+  background-color: var(--primary-blue);
+  padding: 1rem 0;
+}
+.side-navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.side-navigation li a {
+  display: block;
+  padding: 0.8rem 1.5rem;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.2s;
+}
+.side-navigation li.active a, .side-navigation li a:hover {
+  background-color: var(--dark-blue);
+}
+
+/* --- CONTENIDO PRINCIPAL (DERECHA) --- */
+.main-content {
+  flex: 1; /* Ocupa el espacio restante */
+  padding-left: 1rem;
+}
+.main-content h2 {
+  font-family: var(--heading-font);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-top: 0;
+}
+.main-content h4 {
+  font-family: var(--body-font);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.cta-button {
+  background-color: var(--button-color);
+  color: white;
+  padding: 0.7rem 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  margin-top: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.cta-button:hover {
+  opacity: 0.85;
+}
+
+/* --- FOOTER --- */
+/* --- FOOTER --- */
+.site-footer {
+  /* Aquí aplicamos la imagen de fondo con un filtro de color oscuro encima */
+  background: linear-gradient(rgba(29, 66, 96, 0.5), rgba(29, 66, 96, 0.5)), 
+              url('/banner_fondo.png') no-repeat center center/cover;
+  
+  color: white;
+  padding: 3rem 0;
+}
+.footer-content {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.footer-content h4 {
+  margin-top: 0;
+  font-family: var(--heading-font);
+  font-size: 1.5rem;
+}
+.contact-details {
+  display: flex;
+  gap: 4rem;
+  font-size: 0.9rem;
+  line-height: 1.8;
+}
+.copyright {
+  margin-top: 2rem;
+  font-size: 0.8rem;
+  opacity: 0.7;
+}
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 992px) {
+  .page-body {
+    flex-direction: column;
+  }
+  .side-navigation {
+    flex-basis: auto; /* Resetea el tamaño base */
+  }
+  .event-details {
+    font-size: 1.5rem;
+  }
+  .event-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-details {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+}
